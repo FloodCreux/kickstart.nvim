@@ -572,6 +572,7 @@ require('lazy').setup({
         nil_ls = {},
         jdtls = {},
         marksman = {},
+        csharp_ls = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -587,6 +588,8 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'csharpier', -- Use to format C# code
+        'netcoredbg', -- Used to debug C# code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -638,6 +641,13 @@ require('lazy').setup({
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         -- javascript = { { "prettierd", "prettier" } },
+        cs = { 'csharpier' },
+      },
+      formatters = {
+        csharpier = {
+          command = 'dotnet-csharpier',
+          args = { '--write-stdout' },
+        },
       },
     },
   },
