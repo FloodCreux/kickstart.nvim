@@ -194,6 +194,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<leader>pv', '<cmd>Explore<cr>', { desc = 'Open Explorer' })
 
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -764,6 +767,11 @@ require('lazy').setup({
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
+    config = function()
+      require('tokyonight').setup {
+        tranparent = true,
+      }
+    end,
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
