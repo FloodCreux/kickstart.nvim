@@ -5,7 +5,7 @@ return {
       'nvim-lua/plenary.nvim',
       'mfussenegger/nvim-dap',
     },
-    ft = { 'scala', 'sbt', 'java' },
+    ft = { 'scala', 'sbt' },
     init = function()
       local metals_config = require('metals').bare_config()
       metals_config.init_options.statusBarProvider = 'on'

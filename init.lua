@@ -569,6 +569,9 @@ require('lazy').setup({
             },
           },
         },
+        nil_ls = {},
+        jdtls = {},
+        marksman = {},
       }
 
       -- Ensure the servers and tools above are installed
