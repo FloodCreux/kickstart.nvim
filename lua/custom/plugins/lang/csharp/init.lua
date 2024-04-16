@@ -29,4 +29,5 @@ return {
       end
     end,
   },
+  { import = 'custom.plugins.lang.csharp.easy' },
 }
