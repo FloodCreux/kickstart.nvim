@@ -1,15 +1,5 @@
--- debug.lua
---
--- Shows how to use the DAP plugin to debug your code.
---
--- Primarily focused on configuring the debugger for Go, but can
--- be extended to other languages as well. That's why it's called
--- kickstart.nvim and not kitchen-sink.nvim ;)
-
 return {
-  -- NOTE: Yes, you can install new plugins here!
   'mfussenegger/nvim-dap',
-  -- NOTE: And you can specify dependencies as well
   dependencies = {
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
@@ -86,5 +76,33 @@ return {
 
     -- Install golang specific config
     require('dap-go').setup()
+  end,
+  opts = function()
+    local dap = require 'dap'
+
+    -- C#
+    if not dap.adapters['netcoredbg'] then
+      require('dap').adapters['netcoredbg'] = {
+        type = 'executable',
+        command = vim.fn.exepath 'netcoredbg',
+        args = { '--interpreter=vscode' },
+      }
+    end
+    for _, lang in ipairs { 'cs', 'fsharp', 'vb' } do
+      if not dap.configurations[lang] then
+        dap.configurations[lang] = {
+          {
+            type = 'netcoredbg',
+            name = 'Launch file',
+            request = 'launch',
+            ---@diagnostic disable-next-line: redundant-parameter
+            program = function()
+              return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/', 'file')
+            end,
+            cwd = '${workspaceFolder}',
+          },
+        }
+      end
+    end
   end,
 }

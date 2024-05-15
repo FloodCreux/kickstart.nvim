@@ -40,6 +40,7 @@ return {
           metals = {
             runType = 'runOrTestFile',
             --args = { "firstArg", "secondArg", "thirdArg" }, -- here just as an example
+            args = { '--add-opens', 'java.base/sun.nio.ch=ALL-UNNAMED' },
           },
         },
         {

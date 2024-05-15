@@ -256,6 +256,20 @@ require('lazy').setup({
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+
+      -- Terraform setup
+      {
+        'ANGkeith/telescope-terraform-doc.nvim',
+        config = function()
+          require('telescope').load_extension 'terraform_doc'
+        end,
+      },
+      {
+        'cappyzawa/telescope-terraform.nvim',
+        config = function()
+          require('telescope').load_extension 'terraform'
+        end,
+      },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -570,6 +584,7 @@ require('lazy').setup({
         -- is found.
         -- javascript = { { "prettierd", "prettier" } },
         cs = { 'csharpier' },
+        xml = { 'xmlformat' },
       },
       formatters = {
         csharpier = {
@@ -696,6 +711,13 @@ require('lazy').setup({
           { name = 'path' },
         },
       }
+
+      cmp.setup.filetype({ 'sql' }, {
+        sources = {
+          { name = 'vim-dadbod-completion' },
+          { name = 'buffer' },
+        },
+      })
     end,
   },
   -- Highlight todo, notes, etc in comments
@@ -742,7 +764,22 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'ron', 'rust', 'toml' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'vim',
+        'vimdoc',
+        'ron',
+        'rust',
+        'toml',
+        'c_sharp',
+        'terraform',
+        'hcl',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {

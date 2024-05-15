@@ -30,4 +30,5 @@ return {
     end,
   },
   { import = 'custom.plugins.lang.csharp.easy' },
+  { import = 'custom.plugins.lang.csharp.omnisharp' },
 }
