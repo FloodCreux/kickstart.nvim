@@ -5,4 +5,5 @@ return {
   { import = 'custom.plugins.tools.harpoon' },
   { import = 'custom.plugins.tools.lazygit' },
   { import = 'custom.plugins.tools.oil' },
+  { import = 'custom.plugins.tools.wakatime' },
 }
