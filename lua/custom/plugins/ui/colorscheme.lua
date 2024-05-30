@@ -50,4 +50,18 @@ return {
       vim.cmd.hi 'Comment gui=none'
     end,
   },
+  {
+    'diegoulloao/neofusion.nvim',
+    lazy = false,
+    priotity = 1000,
+    config = function()
+      require('neofusion').setup {
+        transparent_background = true,
+      }
+    end,
+    init = function()
+      -- vim.cmd.colorscheme 'neofusion'
+      -- vim.cmd.hi 'Comment gui=none'
+    end,
+  },
 }
