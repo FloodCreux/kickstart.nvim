@@ -200,6 +200,7 @@ return { -- LSP Configuration & Plugins
         organize_imports_on_format = true,
         enable_import_completion = true,
       },
+      -- sqlls = {},
     }
 
     -- Ensure the servers and tools above are installed
@@ -215,9 +216,10 @@ return { -- LSP Configuration & Plugins
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
-      'csharpier', -- Use to format C# code
+      'csharpier', -- Used to format C# code
       'netcoredbg', -- Used to debug C# code
       'codelldb', -- Rust debugger
+      'sqlfmt', -- Used to format SQL
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
