@@ -1,4 +1,9 @@
-require 'config.remap'
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+require 'config.globals'
+
+require 'config.keymaps'
+require 'config.autocmds'
+require 'config.options'
 require 'config.lazy'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
