@@ -1,4 +1,4 @@
 return {
-  'fabridamicelli/cronex.nvim',
-  opts = {},
+  -- 'fabridamicelli/cronex.nvim',
+  -- opts = {},
 }

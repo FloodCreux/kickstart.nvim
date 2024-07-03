@@ -18,6 +18,7 @@ return {
         'c_sharp',
         'terraform',
         'hcl',
+        'scala',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

@@ -1,6 +1,5 @@
 return {
   { import = 'custom.plugins.tools.codesnap' },
-  { import = 'custom.plugins.tools.comments' },
   { import = 'custom.plugins.tools.completion' },
   { import = 'custom.plugins.tools.cronex' },
   { import = 'custom.plugins.tools.gitsigns' },
