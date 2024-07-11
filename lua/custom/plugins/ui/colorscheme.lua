@@ -14,8 +14,8 @@ return {
       }
     end,
     init = function()
-      -- vim.cmd.colorscheme 'tokyonight'
-      -- vim.cmd.hi 'Comment gui=none'
+      vim.cmd.colorscheme 'tokyonight'
+      vim.cmd.hi 'Comment gui=none'
     end,
   },
   {
@@ -46,8 +46,8 @@ return {
       }
     end,
     init = function()
-      vim.cmd.colorscheme 'cyberdream'
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.colorscheme 'cyberdream'
+      -- vim.cmd.hi 'Comment gui=none'
     end,
   },
   {
