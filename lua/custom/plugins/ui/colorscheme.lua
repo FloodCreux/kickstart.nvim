@@ -14,8 +14,8 @@ return {
       }
     end,
     init = function()
-      vim.cmd.colorscheme 'tokyonight'
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.colorscheme 'tokyonight'
+      -- vim.cmd.hi 'Comment gui=none'
     end,
   },
   {
@@ -62,6 +62,21 @@ return {
     init = function()
       -- vim.cmd.colorscheme 'neofusion'
       -- vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+  {
+    'eldritch-theme/eldritch.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require('eldritch').setup {
+        transparent = true,
+      }
+    end,
+    init = function()
+      vim.cmd.colorscheme 'eldritch'
+      vim.cmd.hi 'Comment gui=none'
     end,
   },
 }
