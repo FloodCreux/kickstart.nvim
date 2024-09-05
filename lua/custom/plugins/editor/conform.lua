@@ -32,7 +32,7 @@ return {
         -- python = { "isort", "black" },
         javascript = { { 'prettier' } },
         cs = { 'csharpier' },
-        xml = { 'xmlformat' },
+        xml = { 'xmllint' },
         -- sql = { 'sqlfmt' },
       },
       format_after_save = function(bufnr)
