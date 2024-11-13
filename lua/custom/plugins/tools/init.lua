@@ -1,4 +1,6 @@
 return {
+  { import = 'custom.plugins.tools.avante' },
+  { import = 'custom.plugins.tools.chatgpt' },
   { import = 'custom.plugins.tools.codesnap' },
   { import = 'custom.plugins.tools.completion' },
   { import = 'custom.plugins.tools.cronex' },

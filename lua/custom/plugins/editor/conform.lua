@@ -34,6 +34,8 @@ return {
         cs = { 'csharpier' },
         xml = { 'xmllint' },
         -- sql = { 'sqlfmt' },
+        markdown = { 'prettier' },
+        nix = { 'nixfmt' },
       },
       format_after_save = function(bufnr)
         if not slow_format_filetypes[vim.bo[bufnr].filetype] then

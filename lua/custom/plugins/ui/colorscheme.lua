@@ -75,7 +75,14 @@ return {
       }
     end,
     init = function()
-      vim.cmd.colorscheme 'eldritch'
+      -- vim.cmd.colorscheme 'eldritch'
+      -- vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+  {
+    'blazkowolf/gruber-darker.nvim',
+    init = function()
+      vim.cmd.colorscheme 'gruber-darker'
       vim.cmd.hi 'Comment gui=none'
     end,
   },

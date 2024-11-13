@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR>', { silent = true })
 
 vim.filetype.add { extension = { templ = 'templ' } }
 
